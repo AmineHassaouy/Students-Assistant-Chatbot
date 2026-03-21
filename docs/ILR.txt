@@ -1,0 +1,35 @@
+Qu’est-ce que le DUT Ingénierie Logicielle et Réseaux (ILR) ?
+Diplôme Universitaire de Technologie de 2 ans (4 semestres) délivré par l’École Supérieure de Technologie de Khénifra.  
+Formation très professionnalisante qui combine développement logiciel (Python, Java, Web, mobile) et administration réseaux/systèmes (Cisco, Linux, Windows Server, cloud).
+Durée du DUT Ingénierie Logicielle et Réseaux (ILR)
+2 ans – 4 semestres.
+Objectif principal du DUT Ingénierie Logicielle et Réseaux (ILR)
+Former des techniciens immédiatement opérationnels en programmation avancée et en administration réseaux/systèmes, prêts à travailler dès la sortie du diplôme.
+Compétences clés acquises en Ingénierie Logicielle et Réseaux (ILR)
+Programmation Python, Java, C#, développement web/mobile, POO, bases de données, administration Linux & Windows Server, réseaux Cisco CCNA, cybersécurité, virtualisation, cloud, automatisation scripting, gestion de projets informatiques.
+Modules Semestre 1 – Ingénierie Logicielle et Réseaux (ILR)
+Mathématiques 1, Algèbre linéaire, Algorithmique & programmation C, Architecture ordinateurs, Systèmes d’information & bases de données, Probabilités et statistiques, Langues étrangères, Méthodologie de travail universitaire, Technologie Web.
+Modules Semestre 2 – Ingénierie Logicielle et Réseaux (ILR)
+Programmation avancée et Python, Bases de données avancées, Culture digitale, Langues étrangères, Systèmes d’exploitation, Réseaux informatiques.
+Modules Semestre 3 – Ingénierie Logicielle et Réseaux (ILR)
+Administration des systèmes & réseaux, Programmation orientée objets avancée, Recherche opérationnelle, Modélisation mathématique, Modélisation UML & POO, Compétences culturelles et artistiques, Développement personnel.
+Modules Semestre 4 – Ingénierie Logicielle et Réseaux (ILR)
+Services réseaux avancés, Apprentissage automatique, Apprentissage profond, Langues étrangères, Stage d’initiation et technique, Projet de Fin d’Études (PFE).
+Métiers immédiats après DUT Ingénierie Logicielle et Réseaux (ILR)
+Développeur full-stack, Administrateur systèmes/réseaux, Technicien réseaux Cisco, Développeur web/mobile, Technicien cybersécurité junior, Technicien support informatique niveau 2/3, Intégrateur applications, Technicien helpdesk.
+Principaux employeurs au Maroc – Ingénierie Logicielle et Réseaux (ILR)
+Capgemini, IBM Maroc, Atos, Sofrecom, Dell, Huawei Maroc, Maroc Telecom, Attijariwafa Bank, BMCI, OCP, ONCF, ministères, startups tech.
+Stages et PFE Ingénierie Logicielle et Réseaux (ILR)
+Obligatoires : stage en entreprise + Projet de Fin d’Études en semestre 4 (souvent chez SSII, télécoms ou banques).
+Entrepreneuriat Ingénierie Logicielle et Réseaux (ILR)
+Oui – nombreux diplômés créent leur SSII, agence web ou société de maintenance informatique.
+Poursuite d’études Ingénierie Logicielle et Réseaux (ILR)
+Très facile : licence pro Développement/Réseaux/Cybersécurité, écoles d’ingénieurs (ENSIAS, EMI, INPT, ENSEM), cycle ingénieur informatique.
+Langues étrangères Ingénierie Logicielle et Réseaux (ILR)
+Module Langues étrangères (anglais technique surtout) présent chaque semestre.
+Préparation certification Cisco CCNA Ingénierie Logicielle et Réseaux (ILR)
+Oui – le programme couvre entièrement le CCNA ; la plupart des étudiants valident la certification en parallèle.
+Le DUT Ingénierie Logicielle et Réseaux (ILR) est extrêmement demandé
+Profil Bac+2 développeur + réseaux est le plus recherché au Maroc selon ANAPEC, Rekrute et LinkedIn.
+Le DUT Ingénierie Logicielle et Réseaux (ILR) est très pratique
+TP intensifs, labs réseaux/systèmes réels, projets concrets, préparation CCNA, partenariats entreprises, stage long.

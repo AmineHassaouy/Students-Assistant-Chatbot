@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecole Supérieure de Technologie - Khénifra</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    /* ================= GLOBAL RESET ================= */
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    html{scroll-behavior:smooth;}
+
+    body{
+      font-family:'Roboto',sans-serif;
+      background-color:#fcfcfc;
+      color:#333;
+      overflow-x:hidden;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 15px;
+    }
+
+    /* ================= HEADER ================= */
+    header{
+      background-color:#ffffff;
+      padding:15px 0;
+      display:flex;
+      justify-content:center;
+    }
+    .logo-wrapper{
+      display:flex;
+      gap:20px;
+      align-items:center;
+    }
+    .logo{
+      height:75px;
+      width:auto;
+    }
+
+    /* ================= NAVBAR STICKY ================= */
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background-color:rgba(255,255,255,0.95);
+      backdrop-filter:blur(8px);
+      border-top:1px solid #e5e5e5;
+      box-shadow:0 4px 12px rgba(15,23,42,.06);
+    }
+    .nav-list{
+      display:flex;
+      justify-content:center;
+      list-style:none;
+      padding:18px 0;
+      flex-wrap:wrap;
+    }
+    .nav-list li{
+      margin:0 15px;
+      position:relative;
+    }
+    .nav-list a{
+      text-decoration:none;
+      color:#000;
+      font-size:14px;
+      font-weight:500;
+      transition:color .3s ease, background .3s ease;
+      display:flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+    }
+    .nav-list a:hover{
+      color:#006eb6;
+      background:#ebf8ff;
+    }
+    .dropdown a::after{
+      content:'';
+      display:inline-block;
+      width:6px;
+      height:6px;
+      border-right:1.5px solid #333;
+      border-bottom:1.5px solid #333;
+      transform:rotate(45deg);
+      margin-left:6px;
+      margin-bottom:3px;
+      transition:border-color .3s;
+    }
+    .dropdown a:hover::after{border-color:#006eb6;}
+
+    /* ================= MARQUEE ================= */
+    .marquee-bar{
+      background-color:#da251c;
+      color:white;
+      padding:10px 0;
+      overflow:hidden;
+      white-space:nowrap;
+      font-family:'Cairo',sans-serif;
+      border-bottom:4px solid #b71c1c;
+    }
+    .marquee-content{
+      display:inline-block;
+      padding-left:100%;
+      font-size:16px;
+      font-weight:600;
+      animation:marquee 25s linear infinite;
+    }
+    @keyframes marquee{
+      0%{transform:translate(0,0);}
+      100%{transform:translate(-100%,0);}
+    }
+
+    /* ================= HERO ================= */
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 550px;
+      background-image: url("{{ url_for('static', filename='images/est.jpeg') }}");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,.05));
+    }
+    .hero-container{
+      display:flex;
+      justify-content:flex-start;
+    }
+    .hero-card{
+      background-color:rgba(255,255,255,0.95);
+      padding:40px;
+      max-width:600px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+      position:relative;
+      border-radius:12px;
+      z-index:1;
+    }
+    .blue-accent-line{
+      width:40px;
+      height:4px;
+      background-color:#2b6cb0;
+      margin-bottom:15px;
+    }
+    .hero-card h1{
+      font-size:28px;
+      color:#1a202c;
+      margin-bottom:15px;
+      font-weight:700;
+    }
+    .hero-card p{
+      font-size:16px;
+      color:#4a5568;
+      line-height:1.6;
+      margin-bottom:25px;
+    }
+    .hero-buttons{
+      display:flex;
+      gap:15px;
+    }
+    .btn{
+      padding:12px 24px;
+      font-size:14px;
+      font-weight:600;
+      text-decoration:none;
+      text-transform:uppercase;
+      transition:all .3s ease;
+      display:inline-block;
+    }
+    .btn-primary{
+      background-color:#2b6cb0;
+      color:white;
+      border:2px solid #2b6cb0;
+    }
+    .btn-primary:hover{
+      background-color:#1a4971;
+      border-color:#1a4971;
+    }
+    .btn-outline{
+      background-color:white;
+      color:#2b6cb0;
+      border:1px solid #e2e8f0;
+    }
+    .btn-outline:hover{border-color:#2b6cb0;}
+
+    /* ================= CHIFFRES-CLÉS ================= */
+    .figures-section {
+      padding: 60px 0 20px 0;
+      background-color: #fff;
+    }
+    .figures-title {
+      font-size: 22px;
+      color: #2d3748;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    .figures-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 24px;
+      background-color: #3182ce;
+      margin-right: 10px;
+    }
+    .figures-subtitle {
+      color: #718096;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .stat-card {
+      background-color: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 22px 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(15,23,42,.06);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 35px rgba(15,23,42,.12);
+    }
+
+    .stat-icon-bg {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #ebf8ff;
+      color: #3182ce;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px auto;
+    }
+
+    .stat-number {
+      font-size: 28px;
+      font-weight: 700;
+      color: #2b6cb0;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: #4a5568;
+      font-weight: 500;
+    }
+
+    /* ================= CONTACT + MAP ================= */
+    .contact-map-section{
+      padding:20px 0 60px 0;
+      background-color:#f7f9fc;
+    }
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.2fr 2fr;
+      gap:30px;
+      align-items:flex-start;
+    }
+    .contact-info-box{
+      background-color:#ffffff;
+      padding:30px;
+      border-radius:8px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+    }
+    .contact-info-box h2{
+      font-size:18px;
+      color:#2d3748;
+      margin-bottom:20px;
+      font-weight:600;
+    }
+    .contact-item{
+      display:grid;
+      grid-template-columns:40px 1fr;
+      align-items:center;
+      gap:10px;
+      margin-bottom:15px;
+      background-color:#ebf8ff;
+      padding:15px;
+      border-radius:4px;
+    }
+    .contact-item i{
+      color:#3182ce;
+      font-size:18px;
+      text-align:center;
+    }
+    .contact-label{
+      font-size:12px;
+      color:#718096;
+      display:block;
+    }
+    .contact-item p{
+      font-size:14px;
+      color:#2d3748;
+      margin:0;
+      line-height:1.2;
+    }
+    .map-box{
+      position:relative;
+      height:450px;
+      border-radius:8px;
+      overflow:hidden;
+      box-shadow:0 4px 10px rgba(0,0,0,0.05);
+    }
+    .map-box iframe{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    }
+    .map-overlay{
+      position:absolute;
+      top:20px;
+      left:20px;
+      z-index:10;
+    }
+    .map-info-card{
+      background:white;
+      padding:10px 15px;
+      border-radius:4px;
+      box-shadow:0 2px 5px rgba(0,0,0,0.2);
+      font-size:13px;
+      max-width:250px;
+    }
+    .map-info-card strong{
+      display:block;
+      margin-bottom:5px;
+      font-size:14px;
+    }
+    .itineraire-link{
+      float:right;
+      color:#3182ce;
+      text-decoration:none;
+      font-weight:500;
+      font-size:12px;
+    }
+    .rating{
+      font-size:12px;
+      color:#4a5568;
+    }
+    .rating .fa-star{color:#f6ad55;}
+    .agrandir-link{
+      display:block;
+      clear:both;
+      font-size:12px;
+      color:#718096;
+      text-decoration:none;
+      margin-top:5px;
+    }
+
+    /* ================= ACTUALITÉS ================= */
+    .news-section{
+      padding:50px 0;
+      background-color:#fff;
+    }
+    .section-header-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:20px;
+    }
+    .section-title{
+      font-size:22px;
+      color:#2d3748;
+      margin-bottom:0;
+      display:flex;
+      align-items:center;
+    }
+    .section-title::before{
+      content:'';
+      display:inline-block;
+      width:4px;
+      height:24px;
+      background-color:#3182ce;
+      margin-right:10px;
+    }
+    .nav-arrows{
+      display:flex;
+      gap:10px;
+    }
+    .arrow-btn{
+      width:35px;
+      height:35px;
+      border-radius:50%;
+      border:1px solid #cbd5e0;
+      background:white;
+      color:#3182ce;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:all .2s;
+    }
+    .arrow-btn:hover{
+      border-color:#3182ce;
+      background-color:#ebf8ff;
+    }
+    .news-content-box{
+      border:1px solid #e2e8f0;
+      padding:30px;
+      border-radius:5px;
+      background:#fff;
+    }
+
+    /* ================= AVIS IMPORTANTS ================= */
+    .notices-section{
+      padding:20px 0 60px 0;
+      background-color:#fff;
+    }
+    .icon-center{
+      text-align:center;
+      margin-bottom:25px;
+    }
+    .news-icon{
+      font-size:40px;
+      color:#4a5568;
+    }
+    .notices-list{
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+    }
+    .notice-item{
+      background:linear-gradient(135deg,#eff6ff,#ffffff);
+      border:1px solid #dae7f7;
+      border-radius:12px;
+      padding:18px 20px;
+      text-align:center;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .notice-item:hover{
+      transform:translateY(-3px);
+      box-shadow:0 14px 28px rgba(15,23,42,.12);
+    }
+    .notice-item h3{
+      font-size:15px;
+      color:#2c5282;
+      margin-bottom:8px;
+      font-weight:600;
+      line-height:1.5;
+    }
+    .notice-item a{
+      font-size:12px;
+      color:#4299e1;
+      text-decoration:none;
+    }
+    .notice-item a:hover{text-decoration:underline;}
+
+    /* ================= FOOTER ================= */
+    .main-footer{
+      background-color:#1a365d;
+      color:#fff;
+      padding-top:40px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1.5fr 1.5fr 2fr;
+      gap:30px;
+      padding-bottom:30px;
+    }
+    .footer-col h4{
+      font-size:16px;
+      margin-bottom:20px;
+      text-transform:uppercase;
+      font-weight:700;
+      position:relative;
+      color:#fff;
+    }
+    .footer-col p,
+    .footer-col ul li{
+      font-size:14px;
+      color:#cbd5e0;
+      line-height:1.7;
+      margin-bottom:10px;
+    }
+    .footer-col ul{list-style:none;}
+    .footer-col ul li{cursor:pointer;}
+    .footer-col ul li i{
+      margin-right:10px;
+      font-size:10px;
+      color:#3182ce;
+    }
+    .est-description p{font-size:13px;}
+    .footer-social {
+      display: flex;
+      gap: 8px;
+      margin-top: 15px;
+    }
+    .social-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #3182ce;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .footer-bottom{
+      background-color:#162a48;
+      padding:15px 0;
+      border-top:1px solid #2d4566;
+    }
+    .footer-bottom .container{
+      display:flex;
+      justify-content:space-between;
+      font-size:12px;
+      color:#92a2b9;
+    }
+
+    /* ================= SCROLL TO TOP ================= */
+    .scroll-to-top{
+      position:fixed;
+      bottom:30px;
+      right:30px;
+      background-color:#3182ce;
+      color:white;
+      width:45px;
+      height:45px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+      transition:background .3s, opacity .3s;
+      z-index:1000;
+      opacity:0;
+      pointer-events:none;
+    }
+    .scroll-to-top.show{
+      opacity:1;
+      pointer-events:auto;
+    }
+    .scroll-to-top:hover{background-color:#2b6cb0;}
+
+    /* ================= CHATBOT STYLES ================= */
+    .chatbot-toggle {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 80px;
+      height: 80px;
+      background: transparent;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: none;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      border: none;
+      padding: 0;
+      overflow: visible;
+    }
+
+    .chatbot-toggle:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(43, 108, 176, 0.6);
+    }
+
+    .chatbot-toggle i {
+      color: white;
+      font-size: 24px;
+    }
+
+    .chatbot-container {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 380px;
+      height: 500px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+      display: none;
+      flex-direction: column;
+      z-index: 1001;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+
+    .chatbot-header {
+      background: linear-gradient(135deg, #2b6cb0, #3182ce);
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chatbot-header h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .close-chatbot {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+
+    .close-chatbot:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      background: #f8fafc;
+    }
+
+    .chat-message {
+      margin-bottom: 15px;
+      padding: 12px 16px;
+      border-radius: 18px;
+      max-width: 80%;
+      word-wrap: break-word;
+      line-height: 1.4;
+    }
+
+    .chat-message.user {
+      background: #2b6cb0;
+      color: white;
+      margin-left: auto;
+      border-bottom-right-radius: 5px;
+    }
+
+    .chat-message.bot {
+      background: white;
+      color: #2d3748;
+      border: 1px solid #e2e8f0;
+      margin-right: auto;
+      border-bottom-left-radius: 5px;
+    }
+
+    .chat-input-container {
+      padding: 15px 20px;
+      border-top: 1px solid #e2e8f0;
+      background: white;
+      display: flex;
+      gap: 10px;
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 12px 15px;
+      border: 1px solid #cbd5e0;
+      border-radius: 25px;
+      outline: none;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    .chat-input:focus {
+      border-color: #3182ce;
+    }
+
+    .send-btn {
+      background: #2b6cb0;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .send-btn:hover {
+      background: #1a4971;
+    }
+
+    .send-btn i {
+      font-size: 16px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width:992px){
+      .footer-grid{grid-template-columns:1fr 1fr;}
+      .stats-grid{grid-template-columns:repeat(2,1fr);}
+      .contact-grid{grid-template-columns:1fr;}
+      .map-box{height:350px;}
+      .chatbot-container {
+        width: 350px;
+        height: 450px;
+        right: 20px;
+        bottom: 90px;
+      }
+    }
+    @media (max-width:768px){
+      .hero-section{
+        height:auto;
+        padding:40px 0;
+      }
+      .hero-container{justify-content:center;}
+      .hero-card{
+        text-align:center;
+        padding:25px;
+      }
+      .blue-accent-line{margin:0 auto 15px auto;}
+      .hero-buttons{justify-content:center;}
+      .nav-list{display:none;}
+      .footer-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+      .footer-col ul li i{display:none;}
+      .est-description p{margin-bottom:30px;}
+      .footer-social{justify-content:center;}
+      .footer-bottom .container{
+        flex-direction:column;
+        text-align:center;
+      }
+      .developer-info{margin-top:10px;}
+      .chatbot-container {
+        width: calc(100vw - 40px);
+        right: 20px;
+        left: 20px;
+        height: 400px;
+      }
+      .chatbot-toggle {
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-wrapper">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="EST Khenifra" class="logo">
+    </div>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="#">Accueil</a></li>
+      <li class="dropdown"><a href="#">EstKh</a></li>
+      <li class="dropdown"><a href="#">Formations</a></li>
+      <li><a href="#">Departement</a></li>
+      <li class="dropdown"><a href="#">Recherche scientifique</a></li>
+      <li class="dropdown"><a href="#">Services</a></li>
+      <li class="dropdown"><a href="#">Activities</a></li>
+      <li><a href="#">Evénements</a></li>
+      <li><a href="#">Se Connecter</a></li>
+    </ul>
+  </nav>
+
+  <!-- MARQUEE -->
+  <div class="marquee-bar">
+    <div class="marquee-content">
+      والإخلاص لجلالة الملك محمد السادس نصره الله وأيده، سائلين الله أن يحفظ جلالته، ويديم على بلادنا الأمن والعزة والازدهار
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-card">
+        <div class="blue-accent-line"></div>
+        <h1>École Supérieure de Technologie – Khénifra</h1>
+        <p>Nous proposons des formations modernes en <strong>DUT</strong> et <strong>BACHELOR</strong>, alignées sur les besoins du marché.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary">Découvrir les DUT</a>
+          <a href="#" class="btn btn-outline">BACHELOR</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHIFFRES-CLÉS -->
+  <section class="figures-section">
+    <div class="container">
+      <h2 class="figures-title">Chiffres-Clés 2024-2025</h2>
+      <p class="figures-subtitle">Découvrez les statistiques clés de l'École Supérieure de Technologie.</p>
+
+      <div class="stats-grid">
+        <!-- Étudiants -->
+        <div class="stat-card">
+          <div class="stat-icon-bg">
+            <img src="{{ url_for('static', filename='images/icons/etudiants.svg') }}" alt="Étudiants" width="24" height="24">
+          </div>
+          <div class="stat-number">+1450</div>
+          <div class="stat-label">Étudiants</div>
+        </div>
+
+        <!-- Enseignants chercheurs -->
+        <div class="stat-card">
+          <div class="stat-icon-bg">
+            <img src="{{ url_for('static', filename='images/icons/enseignants.svg') }}" alt="Enseignants chercheurs" width="24" height="24">
+          </div>
+          <div class="stat-number">+33</div>
+          <div class="stat-label">Enseignants chercheurs</div>
+        </div>
+
+        <!-- Administratifs & techniques -->
+        <div class="stat-card">
+          <div class="stat-icon-bg">
+            <img src="{{ url_for('static', filename='images/icons/admin.svg') }}" alt="Administratifs & techniques" width="24" height="24">
+          </div>
+          <div class="stat-number">+16</div>
+          <div class="stat-label">Administratifs & techniques</div>
+        </div>
+
+        <!-- Formations -->
+        <div class="stat-card">
+          <div class="stat-icon-bg">
+            <img src="{{ url_for('static', filename='images/icons/formations.svg') }}" alt="Formations" width="24" height="24">
+          </div>
+          <div class="stat-number">+17</div>
+          <div class="stat-label">Formations (DUT & Bachelor)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT + MAP -->
+  <section class="contact-map-section">
+    <div class="container contact-grid">
+      <div class="contact-info-box">
+        <h2>Informations de Contact</h2>
+        <div class="contact-item">
+          <img src="{{ url_for('static', filename='images/icons/location.svg') }}" alt="Address" width="24" height="24">
+          <div>
+            <span class="contact-label">Address</span>
+            <p>École Supérieure de Technologie – Khénifra</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <img src="{{ url_for('static', filename='images/icons/phone.svg') }}" alt="Telephone" width="24" height="24">
+          <div>
+            <span class="contact-label">Telephone</span>
+            <p>+212 (0)5xx-xx-xx</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <img src="{{ url_for('static', filename='images/icons/email.svg') }}" alt="E-mail" width="24" height="24">
+          <div>
+            <span class="contact-label">E-mail</span>
+            <p>espace.estkh@usms.ma</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <img src="{{ url_for('static', filename='images/icons/web.svg') }}" alt="Site Web" width="24" height="24">
+          <div>
+            <span class="contact-label">Site Web</span>
+            <p>estkh.usms.ac.ma</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13146.90367252069!2d-5.659996!3d32.898629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd94441584c07b77%3A0x6b7a5483258f33f0!2sEST%20Kh%C3%A9nifra!5e0!3m2!1sen!2sma!4v1700000000000"
+          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="map-overlay">
+          <div class="map-info-card">
+            <strong>EST : École Supérieure de Tec...</strong>
+            <a href="#" class="itineraire-link">Itinéraires</a>
+            <div class="rating">4,8 <i class="fas fa-star"></i> 10 avis</div>
+            <a href="#" class="agrandir-link">Agrandir le plan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTUALITÉS -->
+  <section class="news-section">
+    <div class="container">
+      <div class="section-header-row">
+        <h2 class="section-title">Actualités</h2>
+        <div class="nav-arrows">
+          <button class="arrow-btn"><i class="fas fa-chevron-left"></i></button>
+          <button class="arrow-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+      <div class="news-content-box">
+        <div class="news-text-placeholder" style="text-align:center;font-family:'Cairo',sans-serif;">
+          <h3>لائحة المترشحين لاجتياز المرحلة الثانية</h3>
+          <p>Sciences économiques et gestion</p>
+          <table style="margin:20px auto;border-collapse:collapse;width:80%;border:1px solid #333;font-size:12px;">
+            <tr style="border:1px solid #333;">
+              <td style="border:1px solid #333;padding:5px;">تاريخ ومقر إجراء الاختبار الشفوي</td>
+              <td style="border:1px solid #333;padding:5px;">يوم الجمعة 24 أكتوبر 2025 بالمدرسة العليا للتكنولوجيا خنيفرة</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS IMPORTANTS -->
+  <section class="notices-section">
+    <div class="container">
+      <h2 class="section-title">AVIS IMPORTANTS</h2>
+      <div class="icon-center">
+        <i class="far fa-newspaper news-icon"></i>
+      </div>
+      <div class="notices-list">
+        <div class="notice-item">
+          <h3>Calendrier universitaire du semestre Automne 2025 (S1, S3 et S5)</h3>
+          <a href="#">Ouvrir le PDF</a>
+        </div>
+        <div class="notice-item">
+          <h3>Liste des candidats - Sciences de gestion - لائحة المترشحين لاجتياز المرحلة الأولى</h3>
+          <a href="#">Ouvrir le PDF</a>
+        </div>
+        <div class="notice-item">
+          <h3>Appel à candidature pour le recrutement de trois (03) techniciens par voie de contrat de travail à durée déterminée (CDD)</h3>
+          <a href="#">Ouvrir le PDF</a>
+        </div>
+        <div class="notice-item" style="direction:rtl;">
+          <h3>إعلان عن النتيجة النهائية لمباراة توظيف أستاذ محاضر بالمدرسة العليا للتكنولوجيا خنيفرة</h3>
+          <a href="#" style="direction:ltr;display:inline-block;">Ouvrir le PDF</a>
+        </div>
+        <div class="notice-item">
+          <h3>Retrait des diplômes – Licence 2024/2025</h3>
+          <a href="#">Ouvrir le PDF</a>
+        </div>
+        <div class="notice-item">
+          <h3>Horaires des cours du vendredi (07/11/2025) à l'EST Khénifra</h3>
+          <a href="#">Consulter l'avis</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-col est-description">
+        <h4>EST Khénifra</h4>
+        <p>L'École Supérieure de Technologie de Khénifra est un établissement public dédié à la formation orientée métier et à la recherche appliquée. Nous œuvrons pour l'excellence, l'innovation et l'ouverture sur notre écosystème.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Liens rapides</h4>
+        <ul>
+          <li><i class="fas fa-chevron-right"></i> Présentation</li>
+          <li><i class="fas fa-chevron-right"></i> Mot du directeur</li>
+          <li><i class="fas fa-chevron-right"></i> Corps administratif</li>
+          <li><i class="fas fa-chevron-right"></i> Politique & engagements</li>
+          <li><i class="fas fa-chevron-right"></i> Politique de confidentialité</li>
+          <li><i class="fas fa-chevron-right"></i> Emplois du temps</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><i class="fas fa-file-contract"></i> Assurance de stage</li>
+          <li><i class="fas fa-book-medical"></i> Assurance Maladie Obligatoire</li>
+          <li><i class="fas fa-file-alt"></i> Documents utiles</li>
+          <li><i class="fas fa-book"></i> Bibliothèque</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Coordonnées</h4>
+        <p><i class="fas fa-map-marker-alt"></i> École Supérieure de Technologie de Khénifra, Khénifra</p>
+        <p><i class="fas fa-envelope"></i> estkh@usms.ma</p>
+        <p><i class="fas fa-phone"></i> +212 (0)5xx-xx-xx</p>
+        <p><i class="fas fa-globe"></i> estkh.usms.ac.ma</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn"><img src="{{ url_for('static', filename='images/icons/icon1.svg') }}" alt="Info" width="16" height="16"></a>
+          <a href="#" class="social-btn"><img src="{{ url_for('static', filename='images/icons/icon2.svg') }}" alt="Square" width="16" height="16"></a>
+          <a href="#" class="social-btn"><img src="{{ url_for('static', filename='images/icons/icon3.svg') }}" alt="Link" width="16" height="16"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© 2025 EST Khénifra. Tous droits réservés.</span>
+        <span class="developer-info">Développé par Ton Nom</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CHATBOT -->
+  <button class="chatbot-toggle" id="chatbot-toggle">
+    <img src="{{ url_for('static', filename='images/chatbot-logo.png') }}" alt="EST Chatbot" style="width:75px;height:75px;object-fit:contain;">
+  </button>
+
+  <div class="chatbot-container" id="chatbot-container">
+    <div class="chatbot-header">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img src="{{ url_for('static', filename='images/chatbot-logo.png') }}" alt="EST Chatbot" style="width:38px;height:38px;object-fit:contain;border-radius:50%;">
+        <h3>Assistant EST Khénifra</h3>
+      </div>
+      <button class="close-chatbot" id="close-chatbot">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="chat-message bot">
+        Bonjour ! Je suis l'assistant de l'EST Khénifra. Comment puis-je vous aider aujourd'hui ?
+      </div>
+    </div>
+    <div class="chat-input-container">
+      <input type="text" class="chat-input" id="chat-input" placeholder="Tapez votre message...">
+      <button class="send-btn" id="send-btn">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+
+<script>
+    const toggleBtn   = document.getElementById('chatbot-toggle');
+    const chatBox     = document.getElementById('chatbot-container');
+    const closeBtn    = document.getElementById('close-chatbot');
+    const inputField  = document.getElementById('chat-input');
+    const sendBtn     = document.getElementById('send-btn');
+    const messagesBox = document.getElementById('chat-messages');
+
+    function appendMessage(text, sender) {
+        const div = document.createElement('div');
+        div.classList.add('chat-message', sender);
+
+        if (sender === 'bot') {
+            // render markdown safely
+            const renderedHTML = marked.parse(text);
+            div.innerHTML = DOMPurify.sanitize(renderedHTML);
+        } else {
+            // plain text for user
+            div.textContent = text;
+        }
+
+        messagesBox.appendChild(div);
+        messagesBox.scrollTop = messagesBox.scrollHeight;
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      chatBox.style.display = 'flex';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      chatBox.style.display = 'none';
+    });
+
+    async function sendMessage() {
+      const text = inputField.value.trim();
+      if (!text) return;
+      appendMessage(text, 'user');
+      inputField.value = '';
+
+      try {
+        const resp = await fetch('/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: text })
+        });
+
+        const data = await resp.json();
+        appendMessage(data.reply || 'Je ne peux pas répondre maintenant 😅', 'bot');
+      } catch (err) {
+        appendMessage('⚠️ Erreur serveur, essaie plus tard.', 'bot');
+      }
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    inputField.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') sendMessage();
+    });
+</script>
+</body>
+</html>

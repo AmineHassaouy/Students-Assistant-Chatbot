@@ -1,0 +1,35 @@
+Qu’est-ce que le DUT Ingénierie des Données et Intelligence Artificielle (IDIA) ?
+Diplôme Universitaire de Technologie de 2 ans (4 semestres) délivré par l’École Supérieure de Technologie de Khénifra.  
+Formation ultra-moderne 100 % orientée IA, Big Data, Data Science et développement Python.
+Durée du DUT Ingénierie des Données et Intelligence Artificielle (IDIA)
+2 ans – 4 semestres.
+Objectif principal du DUT Ingénierie des Données et Intelligence Artificielle (IDIA)
+Former des techniciens supérieurs capables de collecter, traiter, analyser, visualiser et valoriser les données massives grâce à l’Intelligence Artificielle, le Machine Learning, le Deep Learning et les technologies Big Data.
+Compétences clés acquises en Ingénierie des Données et Intelligence Artificielle (IDIA)
+Python avancé, SQL & NoSQL, Data Engineering, Machine Learning, Deep Learning, NLP, Big Data (Hadoop, Spark), Cloud, IoT, Data Visualisation (Power BI, Tableau), TensorFlow, Keras, Scikit-learn, UML, systèmes d’aide à la décision.
+Modules s1 (Semestre 1) – Ingénierie des Données et Intelligence Artificielle (IDIA)
+Architecture des ordinateurs, Algorithmique & programmation C, Algèbre linéaire et statistiques, Calcul différentiel/intégral, Systèmes d’exploitation et réseaux, Langues étrangères, Méthodologie de travail universitaire, Calcul scientifique et optimisation.
+Modules s2 (Semestre 2) – Ingénierie des Données et Intelligence Artificielle (IDIA)
+Structures de données et POO, Bases de données SQL, Systèmes d’information et UML, Programmation Python avancée, Langues étrangères, Culture digitale.
+Modules s3 (Semestre 3) – Ingénierie des Données et Intelligence Artificielle (IDIA)
+Big Data et NoSQL, Apprentissage automatique (Machine Learning), Apprentissage profond (Deep Learning), Data Mining & Web Mining, Systèmes d’information d’aide à la décision, Langues étrangères, Compétences culturelles.
+Modules s4 (Semestre 4) – Ingénierie des Données et Intelligence Artificielle (IDIA)
+Applications de l’IA, Visualisation des données et Cloud, Développement personnel, Langues étrangères, Stage d’initiation, Projet de Fin d’Études (PFE).
+Métiers immédiats après DUT Ingénierie des Données et Intelligence Artificielle (IDIA)
+Technicien IA, Analyste Big Data, Développeur Python/Data Engineer, Technicien Machine Learning, Administrateur bases de données, Développeur applications intelligentes, Technico-commercial solutions IA.
+Métiers après poursuite d’études Ingénierie des Données et Intelligence Artificielle (IDIA)
+Data Scientist, Ingénieur IA / Machine Learning Engineer, Data Analyst, Spécialiste Big Data, Consultant Business Intelligence, Ingénieur IoT, Cloud Data Architect.
+Principaux employeurs au Maroc – Ingénierie des Données et Intelligence Artificielle (IDIA)
+Maroc Telecom, Attijariwafa Bank, OCP, BMCE, Orange Maroc, Inwi, IBM Maroc, Capgemini, Atos, Sofrecom, startups (Yassir, Chari.ma, etc.), ministères et administrations publiques.
+Stages et PFE Ingénierie des Données et Intelligence Artificielle (IDIA)
+Obligatoires : stage en entreprise + Projet de Fin d’Études en semestre 4 (souvent chez banques, télécoms ou startups).
+Entrepreneuriat Ingénierie des Données et Intelligence Artificielle (IDIA)
+Oui – nombreux diplômés lancent des startups IA, applications intelligentes ou cabinets de conseil en data.
+Poursuite d’études Ingénierie des Données et Intelligence Artificielle (IDIA)
+Très facile : licence pro IA/Big Data, écoles d’ingénieurs (ENSIAS, EMI, INPT, ENSEM), cycle ingénieur ou master Data Science/IA.
+Langues étrangères Ingénierie des Données et Intelligence Artificielle (IDIA)
+Module Langues étrangères (anglais technique surtout) présent chaque semestre – indispensable dans le domaine.
+Le DUT Ingénierie des Données et Intelligence Artificielle (IDIA) est extrêmement demandé
+L’une des filières les plus recherchées au Maroc grâce à Maroc Digital 2030 et à l’explosion des besoins en IA et Big Data.
+Le DUT Ingénierie des Données et Intelligence Artificielle (IDIA) est très pratique
+Projets réels, hackathons, utilisation intensive de Python, TensorFlow, Keras, Scikit-learn, Hadoop, Spark, Power BI, Tableau + stage long en entreprise.
